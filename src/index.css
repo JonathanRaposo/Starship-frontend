@@ -1,13 +1,358 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+  text-align: center;
+}
+/* navbar styles */
+nav{
+  width: 100%;
+  height: 100px;
+  background-color: rgb(230,230,230);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-attachment: fixed;
+ 
+}
+/* logo wapper styles */
+.logo-link{
+  text-decoration: none;
+  color:#d36a44
+}
+.logo-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.spaceship-logo{
+  width: 110px;
+  padding-left: 12px;
+}
+
+/* end of logo wrapper styles */
+ul{
+  list-style-type: none;
+}
+ul .nav-link {
+   width: 100px;
+   padding: 6px 8px;
+   margin-left:10px;
+   border-radius: 12px;
+   transition: background-color .15s;
+   display: inline-block;
+}
+ul .nav-link:hover{
+  background-color: #e68663;
+}
+ul .nav-link:hover a{
+  background-color: #e68663;
+  color: #fff;
+}
+.nav-link a{
+  color:#d36a44;
+  text-decoration: none;
+}
+
+/* end of Navbar styles */
+
+/* homepage styles */
+.hero{
+  background-image: url('./assets/images/cell-tower.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+/* end of homepage styles */
+
+/* products page styles */
+
+.products-hero{
+  background-image: url('./assets/images/mars.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 200px 0;
+}
+
+/* search bar styles */
+.search-label{
+  display: block;
+  color: #fff;
+  text-shadow: 0px 3px 3px #000;
+  max-width: 150px;
+  padding-left:106px;
+}
+.SearchBar{
+  max-width: 675px;
+  margin: 0 auto;
+}
+.search-field {
+   width: 300px;
+   border: none;
+   border-radius: 12px;
+   padding:6px;
+   outline:none;
+   font-family: 'Poppins', sans-serif;
+   font-size: 1em;
+  
+     
+}
+/* sorting button styles */
+.lowestPrice,
+.highestPrice {
+  min-width: 112px;
+  padding: 8px;
+  margin-left: 20px;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 12px;
+  transition: background-color .15s;
+
+}
+.lowestPrice:hover{
+  background-color: aquamarine;
+}
+.highestPrice:hover{
+  background-color: aquamarine;
+}
+
+/*  product container styles */
+
+.product-container {
+  max-width: 570px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0px 3px 5px grey;
+  border-radius: 12px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+.image-link{
+  transition: transform .15s;
+}
+.image-link:hover{
+  transform: scale(2);
+}
+.content-wrapper {
+  text-align: left;
+  padding: 10px;
+}
+.image-wrapper {
+  transform: scale(1.2)
+}
+.product-container img {
+  max-width: 200px;
+}
+.details-link{
+  text-decoration: none;
+  color:#d36a44;
+  transition: text-decoration .15s;
+}
+.details-link:hover{
+  text-decoration: underline;
+}
+
+.delete-btn{
+  display: block;
+  min-width: 75px;
+  padding: 4px 8px;
+  margin-left: 60%;
+  margin-top: 20px;
+  border:none;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  transition: background-color .15s;
+}
+.delete-btn:hover{
+  background-color: #fd4d4d;
+  color: #fff;
+}
+/* end of product container styles */
+
+/* product details page styles */
+
+.ProductDetailsPage{
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.productDetails-img-wrapper{
+  padding: 20px;
+}
+.productDetails-img{
+ max-width: 500px;
+}
+.productDetails-content{
+  text-align: left;
+  margin: 20px;
+  padding: 20px;
+}
+.productDetails-para{
+  text-align: justify;
+  line-height: 2em ;
+}
+
+.productDetails-backlink,
+.product-update-link
+{
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-decoration .15s;
+  color:#d36a44;
+ 
+}
+.productDetails-backlink:hover{
+text-decoration:underline;
+}
+.product-update-link:hover{
+  text-decoration:underline;
+
+}
+.errMsg-heading{
+  margin-top: 100px;
+  
+  }
+
+  /* Add product page styles */
+
+   form {
+    max-width: 450px;
+    padding: 10px;
+    height: 600px;
+    box-shadow: 0px 3px 5px grey;
+    border-radius: 12px;
+    margin:30px auto;
+   }
+   .addProduct-heading,
+   .editProduct-heading{
+    margin-top: 50px;
+  
+   }
+   .drone-icon{
+    width: 100px;
+   }
+   label{
+    display: block;
+    margin-bottom: 10px;
+   }
+   input {
+    min-width: 306px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+   }
+   .price-field{
+    width: 100px;
+   }
+   textarea{
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+   }
+   .addProduct-btn,
+   .editProduct-btn{
+    min-width: 75px;
+    margin: 20px auto;
+    display: block;
+    border: none;
+    border-radius: 12px;
+    padding: 4px 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    background-color:#4343ff;
+    color: #fff;
+    transition: background-color border .15s;
+    cursor: pointer;
+  
+
+   }
+   .addProduct-btn:hover{
+    background-color:#fff ;
+    color:#4343ff;
+    border: 1px solid #ccc;
+   }
+   .editProduct-btn:hover{
+    background-color:#fff ;
+    color:#4343ff;
+    border: 1px solid #ccc;
+   }
+   .error-message{
+    color:#fd4d4d;
+   }
+  /* end of add product page styles */
+
+/* footer styles */
+
+html,
+body,
+#root,
+.App{
+  height:100%;
+  margin: 0;
+}
+
+.App .wrapper{
+   min-height: 100%;
+   margin-bottom: -252px;
+}
+.footer,
+.push{
+  height: 252px;
+}
+footer {
+  background-color: rgb(230,230,230);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+.footer-link {
+  width: 100px;
+  padding: 6px 8px;
+  margin-left:10px;
+  display: inline-block;
+  transition: text-decoration .15s;
+}
+.footer-link:hover{
+  text-decoration: underline;
+  color:#d36a44
+}
+
+.footer-link a {
+  color:#d36a44;
+  text-decoration: none;
+}
+.copy-right{
+ margin-left: 70px;
+ color:#d36a44;
+ font-size: 0.8em;
+  
+}
+.error-gif{
+  width: 230px;
 }

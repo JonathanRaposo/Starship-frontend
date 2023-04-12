@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import ProductsPage from './pages/ProductsPage';
+import ErrorPage from './pages/ErrorPage';
+import Footer from './components/Footer';
+import ProductDetailsPage from './pages/ProductDetailsPage';
+import AddProductPage from './pages/AddProductPage';
+import EditProductPage from './pages/EditProductPage';
 
-function App() {
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className='wrapper'>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/products' element={<ProductsPage />} />
+          <Route path='/products/:id' element={<ProductDetailsPage />} />
+          <Route path='/create' element={<AddProductPage />} />
+          <Route path='/products/edit/:id' element={<EditProductPage />} />
+
+
+
+          <Route path='*' element={<ErrorPage />} />
+
+
+
+
+        </Routes>
+
+        <div className='push'></div>
+      </div>
+
+      <Footer />
     </div>
   );
 }
